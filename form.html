@@ -21,9 +21,61 @@
         <br>
         <input type="radio" name="SEX" id="SEX" value="FEMALE">FEMALE
         <br>
-        <input type="submit" value="ตกลง">
+        <input type="submit" value="ตกลง"><br>
+        <input type="number" name="Numbers" id="Numbers" min="100" max="100000" step="500" value="100"> <br>
+        เลือกสีที่ชื่นชอบ:<INPUT TYPE="COLOR" NAME="COLOR">
+        <INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="ยืนยันการส่งข้อมูล">
+        <INPUT TYPE="RESET" NAME="RESET" VALUE="เคลียร์ข้อมูล">
+        <br>
+        เลือกช่วงอายุ<INPUT TYPE="RANGE" NAME="AGE" MIN="10" MAX="100"><br>
+        <INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="ยืนยันการส่งข้อมูล">
+        <INPUT TYPE="RESET" NAME="RESET" VALUE="เคลียร์ข้อมูล">
+
 
     </FOrm>
+
+    <FORM NAME="FORM1" METHOD="GET">
+        คำนำหน้าชื่อ
+        <INPUT TYPE="RADIO" NAME="FIRSTNAME" VALUE="นาย">นาย
+        <INPUT TYPE="RADIO" NAME="FIRSTNAME" VALUE="นาง"> นาง
+        <INPUT TYPE="RADIO" NAME="FIRSTNAME" VALUE="นางสาว"> นางสาว<BR>
+        ชื่อ-สกุล
+        <INPUT TYPE="TEXT" NAME="NAME" SIZE="20" AUTOFOCUS REQUIRED PLACEHOLDER="กรุณาป้อนชื่อ-สกุล"> <BR>
+        <INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="ยืนยันการส่งข้อมูล">
+        <INPUT TYPE="RESET" NAME="RESET" VALUE="เคลียร์ข้อมูล">
+    </FORM>
+
+    <FORM NAME="FORM1" METHOD="GET">
+        Comment <BR>
+        <TEXTAREA NAME="COMMENT" ROWS="5" COLS="40" WRAP="HARD">
+        กรุณาแสดงความคิดเห็น  
+        </TEXTAREA> <BR>
+        <INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="ยืนยันการส่งข้อมูล">
+        <INPUT TYPE="RESET" NAME="RESET" VALUE="เคลียร์ข้อมูล">
+    </FORM>
+
+    <FORM NAME="FORM1" METHOD="GET"> รูปแบบภาพยนตร์ที่ชื่นชอบ
+        <SELECT NAME="MOVIEGROUP">
+            <OPTION VALUE="แอนิเมชั่น">แอนิเมชั่น</OPTION>
+            <OPTION VALUE="ชีวประวัติ">ชีวประวัติ</OPTION>
+            <OPTION VALUE="สารคดี">สารคดี</OPTION>
+            <OPTION VALUE="ทดลอง" SELECTED>ทดลอง</OPTION>
+            <OPTION VALUE="ละครเพลง">ละครเพลง</OPTION>
+            <OPTION VALUE="บรรยาย">บรรยาย</OPTION>
+        </SELECT><BR><BR><BR><BR>ประเภทภาพยนตร์ที่ชื่นชอบ
+        <SELECT NAME="MOVIETYPE" SIZE="4" MULTIPLE>
+            <OPTION VALUE="แอ็คชัน">แอ็คชัน</OPTION>
+            <OPTION VALUE="ผจญภัย">ผจญภัย</OPTION>
+            <OPTION VALUE="ตลก">ตลก</OPTION>
+            <OPTION VALUE="ดราม่า">ดราม่า</OPTION>
+            <OPTION VALUE="สยองขวัญ">สยองขวัญ</OPTION>
+        </SELECT><BR><BR><BR>
+        <INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="ยืนยันการส่งข้อมูล">
+        <INPUT TYPE="RESET" NAME="RESET" VALUE="เคลียร์ข้อมูล">
+    </FORM>
+
+
+
 </body>
 
 </html>

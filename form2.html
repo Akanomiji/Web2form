@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>range</title>
+    <style>
+        input[type=range] {
+            accent-color: rgb(0, 0, 255);
+
+        }
+
+        input[type="range"] {
+            appearance: slider-vertical;
+        }
+    </style>
+
+
+
+
+    <script>
+        function change(val) {
+            document.getElementById('textInput').innerHTML = val;
+        };
+    </script>
+</head>
+
+<body>
+    <p><label for="range_weight">Weight: </label> <input type="range" name="weight" class="slider" min="0" max="100"
+            value="75" onchange="change(this.value);">
+        <span id="textInput">75</span>
+    </p>
+</body>
+
+</html>
