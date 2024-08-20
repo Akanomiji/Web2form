@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background: cadetblue;
+    color:#fff;
+    height: 50vh;
+    text-align: center;
+    padding: 2rem;
+    padding-top: 10%;
+}
+h1{
+    font-size: 3rem;
+}
+article{
+    margin: 1rem 0;
+}
+.btn
+{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #FFB739;
+    color:black;
+    padding: 0.75rem 2rem;
+  
+}
