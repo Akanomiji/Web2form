@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: grid;
+        }
+        input[type = "text"]{
+            font-size: 26px;
+            
+        }
+        input[button]{
+            font-size: 26px;
+        }
+
+        .textbox {
+            display: flex;
+        }
+    </style>
+    <script>
+        function clac (myform,op) {
+            let result
+            num1 = parseInt(myform.text1.value);
+            num2 = parseInt(myform.text2.value);
+            switch(op) {
+                case '1' :result = num1 + num2; break;
+                case '2' :result = num1 - num2; break;
+                case '3' :result = num1 * num2; break;
+                case '4' :result = num1 / num2; break;
+            }
+            
+            myform.text3.value = result
+        } 
+    </script>
+</head>
+
+<body>
+    <form action="" name="myform">
+        <div class="textbox">
+        <label for="text1">ค่าที่1</label>
+        <input type="text" name="text1" id="text1" size="50">
+        </div>
+        <div class="textbox">
+        <label for="text2">ค่าที่2</label>
+        <input type="text" name="text2" id="text2" size="50">
+        </div>
+        <div class="textbox">
+        <label for="text3">ผลลัพธ์</label>
+        <input type="text" name="text3" id="text3" size="50">
+        </div>
+        <div class="button">
+        <input type="button" value="+"  onclick="clac(myform,'1')">
+        <input type="button" value="-" onclick="clac(myform,'2')">
+        <input type="button" value="*"  onclick="clac(myform,'3')">
+        <input type="button" value="/" onclick="clac(myform,'4')">
+        </div>
+    </form>
+</body>
+
+</html>
