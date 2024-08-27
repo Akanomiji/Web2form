@@ -6,70 +6,52 @@
     <title>เครื่องคิดเลข</title>
     <style>
         .calculator {
-            width: 240px; margin: 50px auto; padding: 20px;
-            background-color: #CEDF9F; border-radius: 10px; 
+            max-width: 220px; margin: 50px auto; padding: 10px; 
+            background-color: #CEDF9F; border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+        input[type="text"], input[type="button"] {
+            width: 48%; height: 40px; margin: 1%; font-size: 1.2em;
+            border-radius: 5px; border: none; text-align: center;
+        }
         input[type="text"] {
-            width: 100%; font-size: 1.5em; text-align: right;
-            background-color: #A1D6B2; color: #fff; padding: 10px;
-            margin-bottom: 10px; border: none; border-radius: 5px;
+            width: 100%; background-color: #A1D6B2; color: #fff;
+            margin-bottom: 5px; text-align: right; padding-right: 10px;
         }
-        input[type="button"] {
-            width: 22%; height: 50px; margin: 1%; font-size: 1.5em;
-            color: #fff; background-color: #FF8A8A; border: none; 
-            border-radius: 5px; cursor: pointer; transition: 0.3s;
-        }
-        .sign { background-color: #F1F3C2; }
-        .signyellow { background-color: #E8B86D; }
-        .zero { width: 47%; }
+        .op { background-color: #E8B86D; color: #fff; }
+        .fn { background-color: #F1F3C2; color: #fff; }
+        .equal { background-color: #FF8A8A; color: #fff; width: 100%; }
     </style>
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="display" readonly>
-        <input type="button" value="C" class="sign" onclick="clearDisplay()">
-        <input type="button" value="+/-" class="sign" onclick="toggleSign()">
-        <input type="button" value="%" class="sign" onclick="append('%')">
-        <input type="button" value="/" class="signyellow" onclick="append('/')">
+        <input id="display" type="text" readonly>
+        <input type="button" value="C" class="fn" onclick="clearDisplay()">
+        <input type="button" value="+/-" class="fn" onclick="toggleSign()">
+        <input type="button" value="%" class="op" onclick="append('%')">
+        <input type="button" value="/" class="op" onclick="append('/')">
         <input type="button" value="7" onclick="append('7')">
         <input type="button" value="8" onclick="append('8')">
         <input type="button" value="9" onclick="append('9')">
-        <input type="button" value="*" class="signyellow" onclick="append('*')">
+        <input type="button" value="*" class="op" onclick="append('*')">
         <input type="button" value="4" onclick="append('4')">
         <input type="button" value="5" onclick="append('5')">
         <input type="button" value="6" onclick="append('6')">
-        <input type="button" value="-" class="signyellow" onclick="append('-')">
+        <input type="button" value="-" class="op" onclick="append('-')">
         <input type="button" value="1" onclick="append('1')">
         <input type="button" value="2" onclick="append('2')">
         <input type="button" value="3" onclick="append('3')">
-        <input type="button" value="+" class="signyellow" onclick="append('+')">
-        <input type="button" value="0" class="zero" onclick="append('0')">
+        <input type="button" value="+" class="op" onclick="append('+')">
+        <input type="button" value="0" style="width: 100%;" onclick="append('0')">
         <input type="button" value="." onclick="append('.')">
-        <input type="button" value="=" onclick="calculate()">
+        <input type="button" value="=" class="equal" onclick="calculate()">
     </div>
     <script>
         const display = document.getElementById('display');
-
-        function append(value) {
-            display.value += value;
-        }
-
-        function clearDisplay() {
-            display.value = '';
-        }
-
-        function toggleSign() {
-            display.value = display.value.charAt(0) === '-' ? display.value.slice(1) : '-' + display.value;
-        }
-
-        function calculate() {
-            try {
-                display.value = eval(display.value) || '';
-            } catch {
-                display.value = 'Error';
-            }
-        }
+        const append = val => display.value += val;
+        const clearDisplay = () => display.value = '';
+        const toggleSign = () => display.value = display.value.charAt(0) === '-' ? display.value.slice(1) : '-' + display.value;
+        const calculate = () => display.value = eval(display.value) || '';
     </script>
 </body>
 </html>
