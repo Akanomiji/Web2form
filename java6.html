@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคิดเลข</title>
+    <style>
+        .calculator {
+            width: 300px; margin: 50px auto; padding: 20px; 
+            background-color: #CEDF9F; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"] {
+            width: 100%; font-size: 2em; text-align: right;
+            background-color: #A1D6B2; color: #fff; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: none;
+        }
+        input[type="button"] {
+            width: 22%; height: 50px; margin: 1%; font-size: 1.5em; 
+            color: #fff; background-color: #FF8A8A; border: none; border-radius: 5px;
+            cursor: pointer; transition: 0.3s;
+        }
+        .sign { background-color: #F1F3C2; }
+        .signyellow { background-color: #E8B86D; }
+        .zero { width: 47%; }
+    </style>
+    <script>
+        function insert(value) { document.calculator.display.value += value; }
+        function calculate() { 
+            try { document.calculator.display.value = eval(document.calculator.display.value) || ""; }
+            catch { document.calculator.display.value = "ผิดพลาด"; }
+        }
+        function toggleSign() {
+            let val = document.calculator.display.value;
+            document.calculator.display.value = val.charAt(0) === '-' ? val.slice(1) : '-' + val;
+        }
+        function clearDisplay() { document.calculator.display.value = ''; }
+    </script>
+</head>
+<body>
+    <form name="calculator" class="calculator">
+        <input type="text" name="display" readonly>
+        <input type="button" value="ac" class="sign" onclick="clearDisplay()">
+        <input type="button" value="+/-" class="sign" onclick="toggleSign()">
+        <input type="button" value="%" class="sign" onclick="insert('%')">
+        <input type="button" value="/" class="signyellow" onclick="insert('/')">
+        <input type="button" value="7" onclick="insert('7')">
+        <input type="button" value="8" onclick="insert('8')">
+        <input type="button" value="9" onclick="insert('9')">
+        <input type="button" value="*" class="signyellow" onclick="insert('*')">
+        <input type="button" value="4" onclick="insert('4')">
+        <input type="button" value="5" onclick="insert('5')">
+        <input type="button" value="6" onclick="insert('6')">
+        <input type="button" value="-" class="signyellow" onclick="insert('-')">
+        <input type="button" value="1" onclick="insert('1')">
+        <input type="button" value="2" onclick="insert('2')">
+        <input type="button" value="3" onclick="insert('3')">
+        <input type="button" value="+" class="signyellow" onclick="insert('+')">
+        <input type="button" value="0" class="zero" onclick="insert('0')">
+        <input type="button" value="." onclick="insert('.')">
+        <input type="button" value="=" onclick="calculate()">
+    </form>
+</body>
+</html>

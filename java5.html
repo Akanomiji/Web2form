@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        .calculator {
+            width: 459px;
+            margin: auto;
+            border: groove #CEDF9F;
+            background-color: #CEDF9F;
+        }
+
+        input[type="button"] {
+            background-color: #FF8A8A;
+            font-size: 2em;
+            padding: 2%;
+            font-weight: 500;
+            color: #fff;
+            width: 110px;
+
+        }
+
+        .zero {
+            width: 225px !important;
+        }
+
+        .sign {
+            background-color: #F1F3C2 !important;
+        }
+
+        .signyellow {
+            background-color: #E8B86D !important;
+        }
+
+        input[type="text"] {
+            position: sticky;
+            width: 80%;
+            font-size: 2em;
+            color: #fff;
+            padding: 5%;
+            font-weight: 500;
+            float: right;
+            background-color: #A1D6B2;
+            text-align: right;
+            margin-right: 1%;
+        }
+    </style>
+    <SCRIPT LANGUAGE="JavaScript">
+        function addtext(str) {
+            document.calculator.number1.value += str;
+        }
+        function addsign() {
+            var str = document.calculator.number1.value.charAt(0);
+            switch (str) {
+                case "+": document.calculator.number1.value = "-" + document.calculator.number1.value.slice(1); break;
+                case "-": document.calculator.number1.value = "+" + document.calculator.number1.value.slice(1); break;
+                default: document.calculator.number1.value = "+" + document.calculator.number1.value; break;
+            }
+        }
+        function cal() {
+            document.calculator.number1.value = eval(document.calculator.number1.value);
+        }
+    </SCRIPT>
+</head>
+
+<body>
+    <form name="calculator" class="calculator">
+        <INPUT TYPE="text" NAME="number1">
+        <input type="button" name="ac" class="sign" value="AC" onClick="document.calculator.number1.value='';">
+        <input type="button" name="sign" value="+/-" onClick="addsign();" class="sign">
+        <input type="button" name="mod" value="%" onClick="addtext(this.value);" class="sign">
+        <input type="button" name="div" class="signyellow" value="/" onClick="addtext(this.value);">
+        <input type="button" name="seven" value="7" onClick="addtext(this.value);">
+        <input type="button" name="eight" value="8" onClick="addtext(this.value);">
+        <input type="button" name="nine" value="9" onClick="addtext(this.value);">
+        <input type="button" name="mul" class="signyellow" value="*" onClick="addtext(this.value);">
+        <input type="button" name="four" value="4" onClick="addtext(this.value);">
+        <input type="button" name="five" value="5" onClick="addtext(this.value);">
+        <input type="button" name="six" value="6" onClick="addtext(this.value);">
+        <input type="button" name="sub" class="signyellow" value="-" onClick="addtext(this.value);">
+        <input type="button" name="one" value="1" onClick="addtext(this.value);">
+        <input type="button" name="two" value="2" onClick="addtext(this.value);">
+        <input type="button" name="three" value="3" onClick="addtext(this.value);">
+        <input type="button" name="add" class="signyellow" value="+" onClick="addtext(this.value);">
+        <input type="button" name="zero" class="zero" value="0" onClick="addtext(this.value);">
+        <input type="button" name="dot" value="." onClick="addtext(this.value);">
+        <input type="button" name="equal" value="=" onClick="cal();">
+
+    </form>
+</body>
+
+</html>

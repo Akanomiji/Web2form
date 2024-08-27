@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sayHello(message) { alert("Hello " + message); }
+
+    </script>
+</head>
+
+<body>
+    <select name="color" id="" onchange="alert('Your color is '+this.value)">
+        <option value="red">red</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+        <option value="black">black</option>
+    </select>
+    <FORM NAME="myform">
+        <INPUT TYPE="text" NAME="yourname">
+        <INPUT TYPE="button" VALUE="HELLO" onClick="sayHello(document.myform.yourname.value)">
+        <h1 onClick="sayHello()">Click here</h1>
+        <div onClick="sayHello('')" style="width:80%;background-color:pink;padding:10%">
+            Hello
+        </div>
+        <img src="./img/Sea Wallpaper.jfif" title="สีเหลืองสดใส" name="img1"
+            onClick="sayHello(document.myform.img1.title)" width="50%" alt="รูปภาพสีเหลืองสดใส">
+        <!-- <INPUT TYPE="text" NAME="name" onFocus="alert('Welcome')"><BR> -->
+
+
+        <textarea name="" id="" rows="10" cols="80" onselect="alert('You are selecting text in this textarea')">
+                    Testing data for selection in text area.
+                </textarea>
+
+
+    </FORM>
+
+</body>
+
+</html>
