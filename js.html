@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WindowsObject</title>
+    <style>
+        img {
+            margin-left: 10%;
+            margin-right: 10%;
+            height: 320px;
+        }
+    </style>
+    <script language="JavaScript">
+        function openWin() {
+            myWindow = window.open("http://www.crru.ac.th", "_blank", "width=500, height=500");
+        }
+        function closeWin() { myWindow.close(); }
+        function myFunction() {
+            var person = prompt("Please enter your name", "Harry Potter");
+            if (person != null) {
+                document.getElementById("text").innerHTML =
+                    "Hello " + person + "! How are you today?";
+            }
+        }
+        function myFunctionA() {
+            var person = prompt("Please enter your name", "Harry Potter");
+            if (person != null) {
+                document.getElementById("text").innerHTML =
+                    "Hello " + person + "! How are you today?";
+            }
+        }
+        function myFunctionB() {
+            var txt;
+            var r = confirm("ยืนยันการสมัคร!\n OK ตกลง or Cance ยกเลิกl.\n ผลการยืนยันแสดงบนหน้าเว็บเพจ.");
+            if (r == true) {
+                txt = "คุณยืนยันการสมัคร!";
+            } else {
+                txt = "คุณยกเลิกการสมัคร!";
+            }
+            document.getElementById("text").innerHTML = txt;
+        }
+
+
+        function FillTextbox() {
+            window.opener.document.myform.yourID.value = document.idform.id.value;
+            window.self.close();
+        }
+        setInterval("showtime()", 1000)
+        function showtime() {
+            var d = new Date()
+            document.myform.text1.value = d.toLocaleTimeString()
+        }
+        setInterval("reduce()", 1000)
+        var a = 5;
+        function reduce() {
+            document.myformA.text2.value = a;
+            a = a - 1;
+        }
+        var i = 0;
+        var path = new Array();
+        // LIST OF IMAGES
+        path[0] = "./img/thumb-1920-1330918.jpeg";
+        path[1] = "./img/Sea Wallpaper.jfif";
+        path[2] = "./img/thumb-1920-1330918.jpeg";
+        path[3] = "./img/thumb-1920-1330918.jpeg";
+
+        function swapImage() {
+            document.slide.src = path[i];
+            if (i < path.length - 1) i++;
+            else i = 0;
+            setTimeout("swapImage()", 3000);
+        }
+        window.onload = swapImage;
+
+    </script>
+</head>
+
+<body>
+    <button onclick="openWin();">Open Crru a new window</button>
+    <button onclick="closeWin();">Close Crru new window</button>
+    <INPUT TYPE="BUTTON" VALUE="onClick" onClick="window.alert('onclick');">
+    <INPUT TYPE="BUTTON" VALUE="onmouseover" onmouseover="window.alert('onmouseover');">
+    <input type="text" name="text1" value="text" onBlur="window.alert(this.value);">
+    <button onclick="myFunction()">คลิกปุ่มเพื่อป้อนข้อมูล</button>
+    <p id="text"></p>
+    <button onclick="myFunctionA()">คลิกปุ่มเพื่อป้อนข้อมูล</button>
+    <p id="text"></p>
+    <button onclick="myFunctionB()">ยืนยันการสมัคร</button>
+    <p id="text"></p>
+    <FORM NAME="myform">
+        กรุณาใส่รหัสประเภทลูกค้า
+        <INPUT TYPE="text" NAME="yourID">
+        <INPUT TYPE="BUTTON" VALUE="ลืม" onClick="window.open('id.html','win1','menubar=0,width=200,height=200')">
+    </FORM>
+
+    <FORM NAME="idform">
+        <SELECT NAME="id">
+            <OPTION VALUE="001">Wholesale</OPTION>
+            <OPTION VALUE="002">Retail </OPTION>
+            <OPTION VALUE="003">Normal </OPTION>
+        </SELECT>
+        <INPUT TYPE="button" VALUE="Fill" onClick="FillTextbox()">
+    </FORM>
+
+    <FORM name="myformA">
+        <INPUT TYPE="text" NAME="text1"><BR>
+        <INPUT TYPE="text" NAME="text2">
+    </FORM>
+
+    <img name="slide" src="./img/thumb-1920-1330918.jpeg">
+    
+</body>
+
+</html>
+
