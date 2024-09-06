@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        div {
+            border: 10px groove blueviolet;
+            margin: 5px;
+            padding: 15px;
+        }
+
+        p {
+            line-height: 20px;
+            padding: 5px;
+        }
+
+        .democlass {
+            color: red;
+        }
+    </style>
+    <script>
+        function myFunction() {
+            var div = document.getElementById("myDIV");
+            var nodelist = div.getElementsByTagName("P");
+            var i;
+            for (i = 0; i < nodelist.length; i++) {
+                nodelist[i].style.backgroundColor = "pink";
+            }
+        }
+        function myFunctionadd() {
+            document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
+        }
+        function myFunctionremove() {
+
+            document.getElementsByTagName("H1")[0].classList.remove("democlass");
+        }
+        function addClass(obj) {
+            for (var i = 0; i < document.getElementsByTagName("H1").length; i++) {
+                document.getElementsByTagName("H1")[i].classList.remove("democlass");
+            }
+            obj.setAttribute("class", "democlass");
+        }
+    </script>
+</head>
+
+<body>
+    <div id="myDIV">
+        <p>First p element in div.</p>
+        <p>Another p element in div.</p>
+        <p>A third p element in div.</p>
+    </div>
+    <button onclick="myFunction()">เปลี่ยนสีพื้นหลัง</button>
+    <H1 name="show" id="show">Document Object Model</H1>
+    <INPUT TYPE="BUTTON" NAME="BTN" VALUE="เปลี่ยนสีตัวอักษรสีน้ำเงิน"
+        onclick="document.getElementById('show').style.color='blue'">
+    <INPUT TYPE="BUTTON" NAME="BTN" VALUE="เปลี่ยนสีตัวอักษรสีแดง"
+        onclick="document.getElementById('show').style.color='red'">
+    <INPUT TYPE="BUTTON" NAME="BTN" VALUE="เปลี่ยนพื้นหลังสีแดง"
+        onclick="document.getElementById('show').style.background='#FFB739'">
+    <INPUT TYPE="BUTTON" NAME="BTN" VALUE="เปลี่ยนข้อความ"
+        onclick="document.getElementById('show').innerHTML='GET Element By ID'">
+
+    <h1 onclick="addClass(this);">DOM เปลี่ยนค่า Attribute</h1>
+    <h1 onclick="addClass(this);">DOM เปลี่ยนค่า Attribute</h1>
+    <h1 onclick="addClass(this);">DOM เปลี่ยนค่า Attribute</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, facere harum expedita error nulla in nam neque
+        recusandae earum culpa vitae aperiam, blanditiis sed? Possimus asperiores officia optio delectus voluptatem?</p>
+    <button onclick="myFunctionadd()">เปลี่ยนค่า Attribute</button>
+    <button onclick="myFunctionremove()">Removeค่า Attribute</button>
+
+</body>
+
+</html>
