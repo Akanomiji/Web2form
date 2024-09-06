@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+    function changeColour(value){ document.body.style.backgroundColor=value;}
+    function changefore(value){ document.body.style.color=value;}
+    function changesize(value){ document.body.style.fontSize=value;}
+    function Show(form) {
+alert(form.device.value + "\n Index=" + form.device.selectedIndex)
+}
+
+    </script>
+</head>
+<body>
+    <div id= "background">เปลี่ยนสีพื้นหลังเว็บเพจ?
+        <form name="form1" method="post" action="">
+            <input type="radio" name="background1" value="Blue" onClick="changeColour(this.value)">Blue
+            <input type="radio" name="background1" value="yellow" onClick="changeColour(this.value)">yellow
+            <input type="radio" name="background1" value="pink" onClick="changeColour(this.value)">pink
+        </form></div>
+        <div id= "color">เปลี่ยนสีตัวอักษรเว็บเพจ?
+        <form name="form2" method="post" action="">
+            <input type="radio" name="color1" value="Blue" onClick="changefore(this.value)">Blue
+            <input type="radio" name="color1" value="yellow" onClick="changefore(this.value)">yellow
+            <input type="radio" name="color1" value="pink" onClick="changefore(this.value)">pink
+        </form></div>
+        <div id= "size">เปลี่ยนขนาดตัวอักษร?
+        <form name="form3" method="post" action="">
+            <input type="radio" name="size1" value="1.5em" onClick="changesize(this.value)">1.5em
+            <input type="radio" name="size1" value="2em" onClick="changesize(this.value)">2em
+            <input type="radio" name="size1" value="2.5em" onClick="changesize(this.value)">2.5em
+        </form></div>
+        <FORM NAME="myform">
+            <SELECT NAME="device" onChange="Show(this.form)">
+                <OPTION VALUE="Mainboard">MB</OPTION>
+                <OPTION VALUE="Monitor">MN</OPTION>
+                <OPTION VALUE="Microprocessor">MP</OPTION>
+            </SELECT>
+            </FORM>
+            
+</body>
+</html>
+
+    
+ 

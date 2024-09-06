@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <script>
+        function check() { document.getElementById("myCheck").checked = true; }
+        function uncheck() { document.getElementById("myCheck").checked = false; }
+        function clickBtn(form) {
+            var txt = ""; no = 0;
+            for (count = 0; count < form.fruit.length; count++) {
+                if (form.fruit[count].checked == true) {
+                    no++; txt = txt + no + "." + form.fruit[count].value + "<BR>";
+                }
+            }
+            document.getElementById("text").innerHTML = txt;
+        }
+        function clickBtn(form) {
+            var txt = ""; no = 0;
+            for (count = 0; count < form.fruit.length; count++) {
+                if (form.fruit[count].checked == true) {
+                    document.getElementById("text").innerHTML = "You are select " + form.fruit[count].value; break;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <FORM NAME="myform">
+        <INPUT TYPE="checkbox" NAME="fruit" VALUE="Apple">Apple
+        <INPUT TYPE="checkbox" NAME="fruit" VALUE="Banana">Banana
+        <INPUT TYPE="checkbox" NAME="fruit" VALUE="Melon">Melon
+        <INPUT TYPE="checkbox" NAME="fruit" VALUE="Orange">Orange
+        <INPUT TYPE="button" onClick="clickBtn(this.form)" VALUE="Click">
+        <p id="text"></p>
+    </FORM>
+    Checkbox: <input type="checkbox" id="myCheck">
+    <button onclick="check()">Check Checkbox</button>
+    <button onclick="uncheck()">Uncheck Checkbox</button>
+
+    <FORM NAME="myform">
+        <INPUT TYPE="radio" NAME="fruit" VALUE="Apple">Apple
+        <INPUT TYPE="radio" NAME="fruit" VALUE="Banana">Banana
+        <INPUT TYPE="radio" NAME="fruit" VALUE="Melon">Melon
+        <INPUT TYPE="radio" NAME="fruit" VALUE="Orange">Orange
+        <INPUT TYPE="button" onClick="clickBtn(this.form)" VALUE="Click">
+        <p id="text"></p>
+    </FORM>
+
+</body>
+
+</html>

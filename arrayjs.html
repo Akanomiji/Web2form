@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Object ใน Document</title>
+    <script language="JavaScript">
+        function check1() {
+            alert("U R Checking Text from first form :" + document.forms[0].t.value)
+        }
+
+        function check2() {
+            alert("U R Checking Text from second form :" + document.forms[1].t.value)
+        }
+
+        function check3() {
+            var varcheck = document.forms[2].check1;
+            var txt = "";
+            no = 0;
+            for (i = 0; i < varcheck.length; i++) {
+                if (varcheck[i].checked == true) {
+                    no++;
+                    txt = txt + no + "." + varcheck[i].value + "<br>";
+                }
+            }
+            document.getElementById("txt").innerHTML = txt;
+        }
+        function GoTo() { window.location.assign(document.myform.URL.value); }
+        function MailTo(form) {
+            var subject = form.input1.value;
+            var cc = form.input2.value;
+            window.location = "mailto:fongmanee.s@gmail.com?subject=" + subject + "&cc=" + cc;
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <SCRIPT LANGUAGE="JavaScript">
+        document.write(window.location.href + "<BR>")
+        document.write(window.location.protocol + "<BR>")
+    </SCRIPT>
+
+    <FORM>
+        <INPUT TYPE="text" NAME="t">
+        <INPUT TYPE="button" onClick="check1()" value="FORM0">
+    </FORM>
+    <FORM>
+        <INPUT TYPE="text" NAME="t">
+        <INPUT TYPE="button" onClick="check2()" value="FORM1">
+    </FORM>
+    <form>
+        <input type="checkbox" name="check1" value="Apple">Apple
+        <input type="checkbox" name="check1" value="Orange">Orange
+        <input type="checkbox" name="check1" value="Mango">Mango
+        <INPUT TYPE="button" onClick="check3()" value="show">
+        <div id="txt"></div>
+    </form>
+    <FORM NAME="myform">
+        <SELECT NAME="URL" onChange="GoTo()">
+            <OPTION VALUE="http://www.yahoo.com">YAHOO</OPTION>
+            <OPTION VALUE="http://www.google.com">GOOGLE</OPTION>
+            <OPTION VALUE="http://www.facebook.com">Facebook</OPTION>
+            <OPTION VALUE="http://www.catcha.co.th">CATCHA</OPTION>
+        </SELECT>
+    </FORM>
+    <FORM name="myform" onSubmit="return MailTo(this.form)">
+        Subject<INPUT TYPE="text" NAME="input1"><BR>
+        recipient<INPUT TYPE="text" NAME="input2">
+        <INPUT TYPE="submit" value="submit">
+    </FORM>
+
+</body>
+
+</html>
